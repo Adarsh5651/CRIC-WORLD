@@ -1,0 +1,98 @@
+/* CricWorld — simple attractive styling */
+
+/* Color tokens */
+:root{
+  --brand-red: #e8dbdb;
+  --brand-dark: #632929;
+  --muted: #a8a8ad;
+  --text: #f4f4f5;
+  --card-bg: rgba(10,10,12,0.7);
+  --glass: rgba(0,0,0,0.45);
+  --accent: #ffb703;
+  --success: #22c55e;
+}
+
+/* Basic */
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;color:var(--text)}
+a{color:inherit;text-decoration:none}
+
+/* Stadium background */
+body{
+  background:
+    radial-gradient(1200px 600px at 30% -10%, rgba(214,40,40,0.12), transparent 55%),
+    radial-gradient(1000px 600px at 90% -10%, rgba(214,40,40,0.08), transparent 55%),
+    url('https://images.adsttc.com/media/images/62fb/da85/dfae/2a01/6f1d/1adc/large_jpg/compton-and-edrich-stands-lords-cricket-ground-wilkinsoneyre_1.jpg?1660672666') center/cover fixed no-repeat;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* container */
+.container{max-width:1200px;margin:0 auto;padding:0 18px}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:60;background:linear-gradient(180deg, rgba(5,5,6,0.88), rgba(5,5,6,0.55));backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,0.04)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:44px;height:44px;background:radial-gradient(circle at 35% 30%, #ff3b3b, #7a0d0d);border-radius:10px;display:grid;place-items:center;font-weight:800;box-shadow:0 6px 18px rgba(214,40,40,0.2)}
+.wordmark{font-family:Montserrat,Inter,sans-serif;font-weight:800;font-size:1.4rem;background:linear-gradient(90deg,#ff3b3b 0%, #6b0b0b 45%, #0a0a0a 80%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 2px 12px rgba(255,59,59,0.18))}
+
+/* Navigation */
+.main-nav{display:flex;gap:10px;align-items:center}
+.nav-link{padding:8px 12px;border-radius:8px;font-weight:600;color:#e9eaec}
+.nav-link:hover,.nav-link.active{background:rgba(255,255,255,0.04)}
+
+/* Ticker */
+.ticker-wrap{overflow:hidden;border-top:1px solid rgba(255,255,255,0.03);border-bottom:1px solid rgba(255,255,255,0.03);background:linear-gradient(90deg, rgba(0,0,0,0.35), rgba(0,0,0,0.18))}
+.ticker{display:flex;gap:28px;padding:10px 0 12px 0;white-space:nowrap;animation:scroll 30s linear infinite;align-items:center}
+.ticker:hover{animation-play-state:paused}
+.tick{display:inline-flex;align-items:center;gap:10px;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.03)}
+.tick .dot{width:9px;height:9px;border-radius:50%}
+@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* Main layout */
+.main-content{padding:28px 0}
+.grid-layout{display:grid;grid-template-columns:1fr 320px;gap:18px;align-items:start}
+.card{background:var(--card-bg);border-radius:14px;padding:16px;border:1px solid rgba(255,255,255,0.04);box-shadow:0 10px 30px rgba(0,0,0,0.45)}
+.main-card{min-height:260px}
+.side-card{min-height:160px}
+.score-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.score{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+.score strong{display:block;font-size:1rem}
+
+/* News */
+.news-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.news-card{overflow:hidden;border-radius:12px;background:linear-gradient(180deg,rgba(0,0,0,0.25),transparent)}
+.news-card img{width:100%;height:150px;object-fit:cover;display:block}
+.news-card h3{padding:12px 12px 6px;margin:0}
+.news-card p{padding:0 12px 12px;margin:0;color:var(--muted);font-size:0.95rem}
+
+/* Forms */
+.form-card label{display:block;font-size:0.9rem;color:var(--muted);margin-bottom:6px}
+input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:rgba(0,0,0,0.35);color:var(--text)}
+button{padding:10px 12px;border-radius:10px;border:0;background:linear-gradient(90deg,var(--brand-red),#8b0a0a);color:white;font-weight:700;cursor:pointer}
+button:hover{filter:brightness(1.05)}
+.muted{color:var(--muted);font-size:0.95rem}
+
+/* Footer */
+.site-footer{padding:16px 0;border-top:1px solid rgba(255,255,255,0.04);background:rgba(0,0,0,0.3)}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+
+/* Responsive */
+@media(max-width:980px){
+  .grid-layout{grid-template-columns:1fr;gap:14px}
+  .main-nav{display:none}
+  .ticker{animation-duration:40s}
+}
+.game-wrap {
+  aspect-ratio: 16 / 9;
+  max-width: 100%;
+  margin: auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+.game-wrap iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}

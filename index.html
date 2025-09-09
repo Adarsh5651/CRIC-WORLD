@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CricWorld — Live Cricket, News & More</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home">
+        <div class="logo">CW</div>
+        <div class="wordmark">CricWorld</div>
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a class="nav-link active" href="#home">Home</a>
+        <a class="nav-link" href="#live">Live</a>
+        <a class="nav-link" href="#news">News</a>
+        <a class="nav-link" href="#login">Login</a>
+        <a class="nav-link" href="#games">Games</a> 
+        <a class="nav-link" href="#contact">Contact</a>
+      </nav>
+    </div>
+
+    <!-- Sliding live ticker -->
+    <div class="ticker-wrap" aria-hidden="false">
+      <div class="ticker" id="liveTicker" aria-live="polite" title="Live scores — hover to pause"></div>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <!-- HOME -->
+    <section id="home" class="page-section">
+      <div class="grid-layout">
+        <div class="card main-card">
+          <h2>Live Matches</h2>
+          <div id="scoreGrid" class="score-grid">
+            <div class="muted">Loading live matches...</div>
+          </div>
+        </div>
+
+        <aside class="card side-card">
+          <h3>Quick Stats</h3>
+          <div id="quickStats">—</div>
+          <hr />
+          <h3>Top Headlines</h3>
+          <ul class="muted" id="headlines">
+            <li>Captain’s knock seals a thriller.</li>
+            <li>Spin returns to the fore.</li>
+            <li>Young talent watchlist.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- LIVE -->
+    <section id="live" class="page-section" hidden>
+      <div class="card">
+        <h2>All Current Matches</h2>
+        <div id="allMatches">Loading…</div>
+      </div>
+    </section>
+
+    <!-- NEWS -->
+    <section id="news" class="page-section" hidden>
+      <div class="card">
+        <h2>Cricket News</h2>
+        <div class="news-grid" id="newsGrid">
+          <article class="news-card">
+            <img src="https://images.unsplash.com/photo-1602491673984-0b6cec3ab8f2?q=80&w=1200&auto=format&fit=crop" alt="cricket action">
+            <h3>Captain’s knock seals a thriller</h3>
+            <p class="muted">Highlights, analysis and reactions.</p>
+          </article>
+          <article class="news-card">
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop" alt="stadium lights">
+            <h3>Spin to win</h3>
+            <p class="muted">Spin spells that changed matches.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    
+    <!--games-->
+    <!-- GAMES -->
+<section id="games" class="page-section">
+  <div class="card">
+    <h2>Play Cricket Games</h2>
+    <p class="muted">Enjoy free cricket games directly on CricWorld.</p>
+
+    <div class="game-wrap">
+      <iframe
+        src="https://www.crazygames.com/embed/cricket-world-cup"
+        title="Cricket World Cup Game"
+        allow="fullscreen; gamepad; autoplay"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+
+    <!-- LOGIN -->
+    <section id="login" class="page-section" hidden>
+      <div class="card form-card">
+        <h2>Login</h2>
+        <form id="loginForm">
+          <label>Email
+            <input type="email" name="email" required placeholder="you@example.com">
+          </label>
+          <label>Password
+            <input type="password" name="password" required placeholder="••••••••">
+          </label>
+          <button type="submit">Login</button>
+          <p id="loginMsg" class="muted"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="page-section" hidden>
+      <div class="card form-card">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+          <label>Name
+            <input type="text" name="name" required placeholder="Your name">
+          </label>
+          <label>Email
+            <input type="email" name="email" required placeholder="you@example.com">
+          </label>
+          <label>Message
+            <textarea name="message" rows="5" required placeholder="Your message"></textarea>
+          </label>
+          <button type="submit">Send Message</button>
+          <p id="contactMsg" class="muted"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="muted">© <span id="year"></span> CricWorld • Data: CricketData.org</div>
+      <div class="muted">Demo site — keep API key private in production</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
